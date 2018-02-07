@@ -1,4 +1,5 @@
 import unittest
+import math
 from app.models import Rover, Plateau, Storage
 
 class TestModels(unittest.TestCase):
@@ -57,6 +58,20 @@ class TestModels(unittest.TestCase):
         self.assertIn(rover.get_compass(), ('N', 'S', 'W', 'E'))
         self.assertEqual(rover.get_compass(), 'N')
         self.assertEqual(len(rover.get_compass()), 1)
+
+        plateau = Plateau([5, 5])
+        rover.move('L', plateau)
+        self.assertEqual(rover.get_compass(), 'W')
+        rover.move('RR', plateau)
+        self.assertEqual(rover.get_compass(), 'E')
+        rover.move('R', plateau)
+        self.assertEqual(rover.get_compass(), 'S')
+        rover.move('MM', plateau)
+        self.assertEqual(rover.get_compass(), 'S')
+        self.assertEqual(rover.get_position(), [1, 0])
+        rover.move('M', plateau)
+        self.assertEqual(rover.get_compass(), 'S')
+        self.assertEqual(rover.get_position(), [1, 0])
 
 
     def test_plateau(self):
