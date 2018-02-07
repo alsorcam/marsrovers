@@ -1,6 +1,3 @@
-"""
-https://docs.python.org/3/library/unittest.html
-"""
 import unittest
 from app.process import read_file, process_data
 

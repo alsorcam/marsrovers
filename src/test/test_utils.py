@@ -1,6 +1,3 @@
-"""
-https://docs.python.org/3/library/unittest.html
-"""
 import unittest
 from app.utils import COMPASS_TO_DIR, DIR_TO_COMPASS, array_to_string
 
@@ -31,7 +28,7 @@ class TestUtils(unittest.TestCase):
     def test_dir_to_compass(self):
         for key in DIR_TO_COMPASS.keys():
             self.assertIsInstance(key, str)
-            self.assertEqual(DIR_TO_COMPASS[key], 1)
+            self.assertEqual(len(DIR_TO_COMPASS[key]), 1)
             self.assertIn(DIR_TO_COMPASS[key], ('N', 'S', 'W', 'E'))
         
         self.assertIsNotNone(DIR_TO_COMPASS['0 1'])
@@ -50,7 +47,7 @@ class TestUtils(unittest.TestCase):
     def test_compass_to_dir(self):
         for key in COMPASS_TO_DIR.keys():
             self.assertIsInstance(key, str)
-            self.assertEqual(key, 1)
+            self.assertEqual(len(key), 1)
             self.assertIn(key, ('N', 'S', 'W', 'E'))
         
         self.assertIsNotNone(COMPASS_TO_DIR['N'])
