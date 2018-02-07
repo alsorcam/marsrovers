@@ -77,5 +77,6 @@ python main.py ../test_input.txt
 ## Testing
 To run the tests:
 ```
+cd src
 python -m unittest discover test
 ```
