@@ -13,10 +13,10 @@ def init(storage):
 
   # Create dict of rovers
   for key in deployment.keys():
-    if rover_id not in rovers.keys():
-      rovers[rover_id] = rover
+    if key not in rovers.keys():
+      rovers[key] = Rover(deployment[key])
     else:
-      print ("Cannot add rover", rover_id)
+      print ("Cannot add rover", key)
 
   # Print input data
   print ("Plateau size:", storage.get_plateau())
