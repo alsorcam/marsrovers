@@ -2,6 +2,7 @@
 First approach to the solution of the problem Mars Rovers.
 
 
+
 # Problem
 A squad of robotic rovers are to be landed by NASA on a plateau on Mars. This plateau, which is curiously rectangular, must be navigated by the rovers so that their
 on-board cameras can get a complete view of the surrounding terrain to send back to Earth.
@@ -25,23 +26,34 @@ Each rover will be finished sequentially, which means that the second rover wonâ
 
 ## Test input
 Plateau size: 5x5
+
 Rover 1 deploy zone: 1 2 N
+
 Rover 1 movement: LMLMLMLMM
+
 Rover 2 deploy zone: 3 3 E
+
 Rover 2 movement: MMRMMRMRRM
+
 
 ## Expected Output
 Rover 1 position: 1 3 N
+
 Rover 2 position: 5 1 E
 
 
 
 # Solution
 The solution is based in 5 different scripts:
+
 - controller.py where the actions are defined such as moving the rover or printing information.
+
 - main.py where the application is started and initialized.
+
 - models.py where the objects are specified as classes.
+
 - process.py where the input data is processed at first.
+
 - utils.py where the utilities are, such as the conversion of the cardinal point to a 2D vector representing its direction.
 
 
@@ -53,12 +65,14 @@ Install all dependent pip packages:
 pip install -r requirements.txt
 ```
 
+
 ## Running
 Access to the src folder and execute the main.py script:
 ```
 cd src
 python main.py ../test_input.txt
 ```
+
 
 ## Testing
 To run the tests:
